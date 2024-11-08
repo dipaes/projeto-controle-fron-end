@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import api from '../api/axiosConfig';
-import '../styles.css';
+import api from '../../api/axiosConfig';
+import './Register.css'; // Importe o arquivo CSS específico
 
 const Register = () => {
   const [usuario, setUsuario] = useState('');
   const [senha, setSenha] = useState('');
+  const [email, setEmail] = useState(''); // Novo estado para o email
 
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await api.post('/api/register', { usuario, senha });
+      const response = await api.post('/api/register', { usuario, senha, email });
       console.log('Usuário registrado:', response.data);
     } catch (error) {
       console.error('Erro ao registrar:', error);
@@ -30,6 +31,16 @@ const Register = () => {
               placeholder="Usuário"
               value={usuario}
               onChange={(e) => setUsuario(e.target.value)}
+              required
+            />
+          </div>
+          <div className="input-group">
+            <i className="fas fa-envelope"></i> {/* Ícone para o email */}
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>

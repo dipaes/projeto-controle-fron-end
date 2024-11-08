@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import api from '../api/axiosConfig';
-import AuthContext from '../context/AuthContext';
-import '../styles.css';
+import api from './../../api/axiosConfig';
+import AuthContext from '../../context/AuthContext';
+import './Login.css'; // Importe o arquivo CSS específico
 
 const Login = () => {
   const [usuario, setUsuario] = useState('');
@@ -14,13 +14,16 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await api.post('/authenticate', { usuario, senha });
-      setAuth(response.data.token);
-      console.log('Token:', response.data.token);
+      const token = response.data.token;
+      localStorage.setItem('token', token); // Armazene o token no localStorage
+      setAuth(token);
+      console.log('Token armazenado:', token);
       navigate('/dashboard'); // Redireciona para o dashboard após o login
     } catch (error) {
       console.error('Erro ao autenticar:', error);
     }
   };
+  
 
   return (
     <div className="container">
