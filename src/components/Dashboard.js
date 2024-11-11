@@ -1,4 +1,3 @@
-// components/Dashboard.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Grid, Typography, Box } from '@mui/material';
@@ -53,7 +52,7 @@ const Dashboard = () => {
   };
 
   const handleNovoProjeto = () => {
-    navigate('/novo-projeto');
+    navigate('/formulario-principal');
   };
 
   return (
@@ -103,7 +102,7 @@ const Dashboard = () => {
             className={classes.button}
             onClick={handleCadastroFornecedor}
           >
-            NOVO FORNECEDOR
+            Novo Fornecedor
           </Button>
         </Box>
       </Box>

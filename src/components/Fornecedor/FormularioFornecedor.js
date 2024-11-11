@@ -84,6 +84,11 @@ const FormularioFornecedor = () => {
       await api.delete(`/api/fornecedor/${id}`);
       // Remover o fornecedor do estado
       setFornecedores(fornecedores.filter(f => f.id !== parseInt(id)));
+      // Limpar os campos do formulário
+      setNomeFornecedor('');
+      setEmail('');
+      setCargo('');
+      setNomeEmpresa('');
       // Redirecionar para a lista de fornecedores
       navigate('/novo-fornecedor');
     } catch (error) {

@@ -1,0 +1,112 @@
+/* Container principal */
+.form-container {
+    max-width: 1200px; /* Define a largura máxima do contêiner */
+    margin: 0 auto; /* Centraliza o contêiner horizontalmente */
+    padding: 20px; /* Adiciona espaçamento interno */
+    overflow-y: auto; /* Adiciona rolagem vertical */
+    box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
+    height: 100vh; /* Define a altura do contêiner para ocupar toda a altura da tela */
+    display: flex; /* Usa flexbox para organizar os elementos */
+    flex-direction: column; /* Organiza os elementos em coluna */
+}
+
+/* Centralizar títulos */
+.form-container h2, .form-container h3 {
+    text-align: center; /* Centraliza o texto dos títulos */
+    margin-bottom: 20px; /* Adiciona espaçamento abaixo dos títulos */
+}
+
+/* Estilos para o formulário */
+.form-row {
+    display: flex; /* Usa flexbox para organizar os elementos */
+    flex-wrap: wrap; /* Permite que os elementos quebrem linha se necessário */
+    justify-content: space-between; /* Distribui os elementos com espaço entre eles */
+    margin-bottom: 20px; /* Adiciona espaçamento abaixo das linhas do formulário */
+}
+
+.input-group {
+    flex: 1 1 45%; /* Define a flexibilidade e a largura base dos grupos de entrada */
+    margin-bottom: 20px; /* Adiciona espaçamento abaixo dos grupos de entrada */
+}
+
+.input-group.small-input {
+    flex: 1 1 30%; /* Ajusta a largura base para campos menores */
+}
+
+.input-group label {
+    display: block; /* Faz o rótulo ocupar toda a largura disponível */
+    margin-bottom: 5px; /* Adiciona espaçamento abaixo do rótulo */
+    font-weight: bold; /* Deixa o texto do rótulo em negrito */
+}
+
+.input-group input, .input-group select, .input-group textarea {
+    width: 100%; /* Faz os campos ocuparem toda a largura disponível */
+    padding: 10px; /* Adiciona espaçamento interno */
+    border: 1px solid #ccc; /* Define a borda dos campos */
+    border-radius: 4px; /* Arredonda os cantos das bordas */
+}
+
+/* Estilos para as seções */
+.section {
+    border: 1px solid #ccc; /* Define a borda das seções */
+    border-radius: 8px; /* Arredonda os cantos das bordas */
+    padding: 20px; /* Adiciona espaçamento interno */
+    margin-bottom: 20px; /* Adiciona espaçamento abaixo das seções */
+    background-color: #997fde; /* Define a cor de fundo das seções */
+}
+
+.section h3 {
+    margin-top: 0; /* Remove a margem superior dos títulos das seções */
+}
+
+/* Botões */
+.button-group {
+    display: flex; /* Usa flexbox para organizar os botões */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+}
+
+.button-group button {
+    padding: 10px 20px; /* Adiciona espaçamento interno aos botões */
+    margin: 10px; /* Adiciona espaçamento ao redor dos botões */
+    border: none; /* Remove a borda dos botões */
+    border-radius: 4px; /* Arredonda os cantos das bordas dos botões */
+    background-color: #007bff; /* Define a cor de fundo dos botões */
+    color: white; /* Define a cor do texto dos botões */
+    cursor: pointer; /* Muda o cursor para indicar que o elemento é clicável */
+}
+
+.button-group button:hover {
+    background-color: #0056b3; /* Muda a cor de fundo dos botões ao passar o mouse */
+}
+
+/* Adicione feedback visual para campos obrigatórios */
+.input-group input:required, .input-group select:required, .input-group textarea:required {
+    border-left: 4px solid #ff0000; /* Borda vermelha para campos obrigatórios */
+}
+
+/* Adicione estilos para mensagens de erro */
+.error-message {
+    color: #ff0000; /* Cor vermelha para mensagens de erro */
+    font-size: 0.9em; /* Tamanho da fonte menor */
+    margin-top: 5px; /* Espaçamento acima da mensagem */
+}
+
+/* Ajuste para os campos de data e status */
+.input-group input[type="date"], .input-group select {
+    width: auto; /* Ajusta a largura dos campos de data e status */
+    flex: 1 1 30%; /* Define a flexibilidade e a largura base */
+}
+
+/* Ajuste para alinhar os campos de data e status */
+.form-row {
+    display: flex; /* Usa flexbox para organizar os elementos */
+    flex-wrap: nowrap; /* Impede que os elementos quebrem linha */
+    justify-content: space-between; /* Distribui os elementos com espaço entre eles */
+}
+
+/* Ajuste para dispositivos menores */
+@media (max-width: 768px) {
+    .input-group {
+        flex: 1 1 100%; /* Faz os campos ocuparem toda a largura disponível em telas menores */
+    }
+}

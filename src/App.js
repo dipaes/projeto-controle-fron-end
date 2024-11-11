@@ -4,6 +4,7 @@ import Login from './components/Login/Login';
 import Register from './components/Login/Register';
 import FormularioFornecedor from './components/Fornecedor/FormularioFornecedor';
 import Dashboard from './components/Dashboard';
+import FormularioPrincipal from './components/Formulario/FormularioPrincipal'; // Importando o FormularioPrincipal
 import AuthContext from './context/AuthContext';
 import './styles.css';
 
@@ -19,11 +20,12 @@ const App = () => {
           <Route path="/dashboard" element={auth ? <Dashboard /> : <Navigate to="/login" />} />
           <Route path="/novo-fornecedor" element={auth ? <FormularioFornecedor /> : <Navigate to="/login" />} />
           <Route path="/editar-fornecedor/:id" element={auth ? <FormularioFornecedor /> : <Navigate to="/login" />} />
+          <Route path="/formulario-principal" element={auth ? <FormularioPrincipal /> : <Navigate to="/login" />} /> {/* Adicionando a rota para FormularioPrincipal */}
           <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
-        
       </div>
     </Router>
   );
 };
+
 export default App;
